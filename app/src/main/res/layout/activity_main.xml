@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_margin="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CÔNG CỤ TÍNH LÃI TIỀN GỬI"
+        android:textSize="24dp"
+        android:gravity="center"
+        android:textColor="#3161D9"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Số tiền gửi *"
+        android:layout_marginTop="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="16dp"
+        />
+
+
+    <EditText
+        android:id="@+id/et_tiengui"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="VNĐ"
+        android:inputType="numberDecimal"
+        android:textColorHighlight="#F878A2"
+        android:textColorHint="#123456"
+        android:textSize="28dp"
+        android:textAlignment="textEnd"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lãi suất gửi *"
+        android:layout_marginTop="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="16dp"
+        />
+
+
+    <EditText
+        android:id="@+id/et_laisuat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="%/Năm"
+        android:inputType="numberDecimal"
+        android:textColorHighlight="#F878A2"
+        android:textColorHint="#123456"
+        android:textSize="28dp"
+        android:textAlignment="textEnd"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kỳ hạn gửi *"
+        android:layout_marginTop="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="16dp"
+        />
+
+
+    <EditText
+        android:id="@+id/et_kyhan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Tháng"
+        android:inputType="numberDecimal"
+        android:textColorHighlight="#F878A2"
+        android:textColorHint="#123456"
+        android:textSize="28dp"
+        android:textAlignment="textEnd"
+        />
+
+    <Button
+        android:id="@+id/btn_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xem kết quả"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        />
+
+</LinearLayout>
