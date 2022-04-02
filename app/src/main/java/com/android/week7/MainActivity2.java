@@ -22,10 +22,10 @@ public class MainActivity2 extends AppCompatActivity {
         String result = intent.getStringExtra("result");
         String tien = intent.getStringExtra("tiengui");
 
-        int lai = Integer.parseInt(result);
-        int tiengui = Integer.parseInt(tien);
+        double lai = Double.parseDouble(result);
+        double tiengui = Double.parseDouble(tien);
 
-        tv_lai.setText(result);
-        tv_tongtien.setText(Integer.toString(lai + tiengui));
+        tv_lai.setText(result+" VNĐ");
+        tv_tongtien.setText(Double.toString(lai + tiengui) + " VNĐ");
     }
 }

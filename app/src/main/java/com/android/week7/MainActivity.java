@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText et_tiengui,et_laisuat,et_kyhan;
     Button btn_result;
-    int tiengui,laisuat,kyhan;
+    double tiengui,laisuat,kyhan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,20 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         btn_result = (Button) findViewById(R.id.btn_result);
 
-        btn_result.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(getNumber()){
-                    double result = tiengui*laisuat*(kyhan*30)/360;
-                    Intent intent = new Intent(MainActivity.this,MainActivity2.class);
-//                    intent.putExtra("tiengui",tiengui);
-//                    intent.putExtra("result",result);
-                    MainActivity.this.startActivity(intent);
-                }else {
-                    Toast.makeText(MainActivity.this,"Please enter all value", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+
     }
 
     public boolean getNumber(){
@@ -56,10 +43,26 @@ public class MainActivity extends AppCompatActivity {
 
         if(s1.isEmpty() || s2.isEmpty() || s3.isEmpty()) return false;
         else{
-            tiengui  = Integer.parseInt(s1);
-            laisuat = Integer.parseInt(s2);
-            kyhan = Integer.parseInt(s3);
+            tiengui = Double.parseDouble(s1);
+            laisuat = Double.parseDouble(s2);
+            kyhan=Double.parseDouble(s3);
             return true;
+        }
+    }
+
+    public void doCalculate(View v){
+        if(getNumber()){
+            double result = (tiengui*laisuat*kyhan*30)/(360*100);
+            System.out.println(tiengui);
+            System.out.println(laisuat);
+            System.out.println(kyhan);
+            System.out.println(result);
+            Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+            intent.putExtra("result",Double.toString(result));
+            intent.putExtra("tiengui",Double.toString(tiengui));
+            startActivity(intent);
+        }else{
+            Toast.makeText(MainActivity.this,"Please enter all value", Toast.LENGTH_SHORT).show();
         }
     }
 
